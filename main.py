@@ -22,4 +22,4 @@ if __name__ == '__main__':
         assert e.response["ok"] is False
         assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
         print(f"Got an error: {e.response['error']}")
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='13.125.210.112', port=port, debug=True)
