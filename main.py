@@ -6,7 +6,7 @@ from slack_sdk.errors import SlackApiError
 app = Flask(__name__)
 
 
-@app.route('/db', methods=['POST'])
+@app.route('/db', methods=['GET, POST'])
 def db():
     return "db"
 
