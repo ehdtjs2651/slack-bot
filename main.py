@@ -3,13 +3,16 @@ import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 import ssl
+from db_check import db_ls
 
 app = Flask(__name__)
-client = WebClient(token="xoxb-2637151350448-2663729429670-m5KXVsn4DAhF4OMw1dSUAOnn")
+client = WebClient(token="")
+
 
 @app.route('/db', methods=["POST"])
 def db():
-    client.chat_postMessage(channel="#test", text="db")
+    db_ls()
+    client.chat_postMessage(channel="#test")
     return Response(status=200, mimetype="application/json")
 
 
