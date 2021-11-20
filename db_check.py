@@ -51,24 +51,26 @@ def db_ls():
     tables = search_table_start_str(table_name_starts_with)
     del tables[tables.index('app_collect_generation')]
     del tables[tables.index('app_collect_apiirradiation')]
+    text = ""
     for table in tables:
-        print(f"today's data collected : {counter(db, table, column, time)} at {table}")
-    print(f"today's data collected : {counter(db, 'app_collect_generation', 'target', time)} at app_collect_generation")
-    print(f"today's data collected : {counter(db, 'app_collect_apiirradiation', 'target', time)} at app_collect_apiirradiation")
+        text += f"today's data collected : {counter(db, table, column, time)} at {table}"
+    text += f"today's data collected : {counter(db, 'app_collect_generation', 'target', time)} at app_collect_generation"
+    text += f"today's data collected : {counter(db, 'app_collect_apiirradiation', 'target', time)} at app_collect_apiirradiation"
     for table in tables:
-        print(f"day 1 before data collected : {counter(db, table, column, time-timedelta(days = 1))} at {table}")
-    print(f"day 1 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 1))} at app_collect_generation")
-    print(f"day 1 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 1))} at app_collect_apiirradiation")
+        text += f"day 1 before data collected : {counter(db, table, column, time-timedelta(days = 1))} at {table}"
+    text += f"day 1 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 1))} at app_collect_generation"
+    text += f"day 1 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 1))} at app_collect_apiirradiation"
     for table in tables:
-        print(f"day 2 before data collected : {counter(db, table, column, time-timedelta(days = 2))} at {table}")
-    print(f"day 2 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 2))} at app_collect_generation")
-    print(f"day 2 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 2))} at app_collect_apiirradiation")
+        text += f"day 2 before data collected : {counter(db, table, column, time-timedelta(days = 2))} at {table}"
+    text += f"day 2 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 2))} at app_collect_generation"
+    text += f"day 2 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 2))} at app_collect_apiirradiation"
     for table in tables:
-        print(f"day 3 before data collected : {counter(db, table, column, time-timedelta(days = 3))} at {table}")
-    print(f"day 3 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 3))} at app_collect_generation")
-    print(f"day 3 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 3))} at app_collect_apiirradiation")
+        text += f"day 3 before data collected : {counter(db, table, column, time-timedelta(days = 3))} at {table}"
+    text += f"day 3 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 3))} at app_collect_generation"
+    text += f"day 3 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 3))} at app_collect_apiirradiation"
     for table in tables:
-        print(f"day 4 before data collected : {counter(db, table, column, time-timedelta(days = 4))} at {table}")
-    print(f"day 4 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 4))} at app_collect_generation")
-    print(f"day 4 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 4))} at app_collect_apiirradiation")
+        text += f"day 4 before data collected : {counter(db, table, column, time-timedelta(days = 4))} at {table}"
+    text += f"day 4 before data collected : {counter(db, 'app_collect_generation', 'target', time-timedelta(days = 4))} at app_collect_generation"
+    text += f"day 4 before data collected : {counter(db, 'app_collect_apiirradiation', 'target', time-timedelta(days = 4))} at app_collect_apiirradiation"
+    return text
 

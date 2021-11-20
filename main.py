@@ -11,7 +11,8 @@ client = WebClient(token="")
 
 @app.route('/db', methods=["POST"])
 def db():
-    client.chat_postMessage(channel="#test", text=db_ls())
+    text = db_ls()
+    client.chat_postMessage(channel="#test", text=text)
     return Response(status=200, mimetype="application/json")
 
 
